@@ -20,7 +20,7 @@ class Turtle_Runner:
 colors = ('Red', 'Green', 'Blue', 'Purple', 'Yellow', 'Orange')
 position = 0
 contestants = []
-for x in range(2):
+for x in range(6):
     contestant = Turtle_Runner(colors[x], position)
     position += 40
     contestants.append(contestant)
@@ -31,8 +31,8 @@ for x in contestants:
 
 y = 0
 while contestants[y].runner.xcor() <= 210:
-    for x in range(2):
-        y = random.randint(0, 1)
+    for x in range(6):
+        y = random.randint(0, 5)
         contestants[y].race()
         print(f"Color: {contestants[y].runner.color()}Position: {contestants[y].runner.pos()}\n{contestants[y].pick}")
         if contestants[y].runner.xcor() >= 210:
