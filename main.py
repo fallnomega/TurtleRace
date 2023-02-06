@@ -24,7 +24,9 @@ for x in range(6):
     contestant = Turtle_Runner(colors[x], position)
     position += 40
     contestants.append(contestant)
-your_bet = t.textinput('Place your bet', "Pick who will win... choose either Red, Green, Blue, Purple, Yellow, Orange")
+screen = t.Screen()
+
+your_bet = screen.textinput('Place your bet', "Pick which turtle will win... choose either Red, Green, Blue, Purple, Yellow, Orange")
 for x in contestants:
     if x.runner.pencolor() == your_bet:
         x.pick = 1
@@ -42,5 +44,4 @@ while contestants[y].runner.xcor() <= 210:
             else:
                 print("You lose!")
 
-screen = t.Screen()
 screen.exitonclick()
