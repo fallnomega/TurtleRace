@@ -1,16 +1,15 @@
-# This is a sample Python script.
+import turtle as t
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+# class Turtle_Runner:
+#     def __init__(self,color):
+#         self.Turtle()
+#         self.color(color)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+screen = t.Screen()
+screen.exitonclick()
+# runner1 = Turtle_Runner("red")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+runner_temp = t.Turtle()
+runner_temp.color("red")
+runner_temp.forward(10)
