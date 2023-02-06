@@ -13,35 +13,38 @@ class Turtle_Runner:
         self.pick = 0
 
     def race(self):
-        self.runner.forward(10)
-        print(f"Color: {self.runner.color()}Position: {self.runner.pos()}")
+        distance = random.randint(0,10)
+        self.runner.forward(distance)
 
 
 colors = ('Red', 'Green', 'Blue', 'Purple', 'Yellow', 'Orange')
+screen = t.Screen()
+# screen.setup(width=600,height=500)
+your_bet = screen.textinput('Place your bet', "Pick which turtle will win... choose either Red, Green, Blue, Purple, Yellow, Orange")
+
 position = 0
 contestants = []
+
 for x in range(6):
     contestant = Turtle_Runner(colors[x], position)
     position += 40
     contestants.append(contestant)
-screen = t.Screen()
-
-your_bet = screen.textinput('Place your bet', "Pick which turtle will win... choose either Red, Green, Blue, Purple, Yellow, Orange")
 for x in contestants:
     if x.runner.pencolor() == your_bet:
         x.pick = 1
 
 y = 0
-while contestants[y].runner.xcor() <= 210:
+while contestants[y].runner.xcor() <= 250:
     for x in range(6):
         y = random.randint(0, 5)
         contestants[y].race()
         print(f"Color: {contestants[y].runner.color()}Position: {contestants[y].runner.pos()}\n{contestants[y].pick}")
-        if contestants[y].runner.xcor() >= 210:
-            print(f"Color: {contestants[y].runner.pencolor()} is the winner")
+        if contestants[y].runner.xcor() >= 250:
+            print(f"{contestants[y].runner.pencolor()} Turtle is the winner")
             if contestants[y].pick == 1:
                 print("You win!")
             else:
                 print("You lose!")
+
 
 screen.exitonclick()
